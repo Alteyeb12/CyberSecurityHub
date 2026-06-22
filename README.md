@@ -1,2 +1,72 @@
-# CyberSecurityHub
-A digital platform that aims to provide integrated software solutions 
+# 🛡️ منصة التهديدات السيبرانية المتكاملة
+# Cyber Security Hub Platform
+
+منصة شاملة لمراقبة والتحقيق في التهديدات السيبرانية بميزات متقدمة وواجهة عربية سهلة الاستخدام.
+
+## المميزات الرئيسية
+
+### 🛡️ الأمان والحماية
+- ✅ نظام مصادقة متعدد العوامل (MFA)
+- ✅ تشفير متقدم للبيانات (AES-256)
+- ✅ نسخ احتياطي سحابي تلقائي
+- ✅ تسجيل الدخول الموحد (SSO)
+- ✅ نظام تحكم الوصول القائم على الأدوار (RBAC)
+
+### 📊 لوحة التحكم والتحليلات
+- ✅ لوحة تحكم تفاعلية في الوقت الفعلي
+- ✅ تحليلات رسومية متقدمة
+- ✅ تقارير تحليلية دقيقة للمخاطر الأمنية
+- ✅ لوحة تحكم مخصصة للمديرين
+- ✅ إحصائيات فورية
+
+### 🔔 التنبيهات والإخطارات
+- ✅ تنبيهات فورية باللغة العربية
+- ✅ إشعارات ذكية للاختراقات المحتملة
+- ✅ نظام إخطارات متعدد القنوات (Email, SMS, In-App)
+- ✅ تصفية التنبيهات حسب الأولوية
+
+### 📱 التوافقية
+- ✅ واجهة مستخدم متوافقة مع الأجهزة المحمولة
+- ✅ تطبيق محمول (Android و iOS)
+- ✅ دعم متعدد اللغات (العربية والإنجليزية)
+- ✅ واجهة سهلة وبديهية
+
+### 🔧 التكامل والتطوير
+- ✅ API RESTful للتكامل السهل
+- ✅ تكامل مع الأنظمة الموجودة
+- ✅ Webhook Support
+- ✅ دعم فني 24/7
+
+## التكنولوجيا المستخدمة
+
+- **Backend**: ASP.NET Core 7.0+
+- **Database**: SQL Server
+- **Frontend**: React 18+ with TypeScript
+- **Mobile**: React Native
+- **Styling**: Tailwind CSS
+- **Real-time**: SignalR
+- **Cloud**: Azure
+- **Cache**: Redis
+- **Authentication**: JWT + OAuth2
+
+## التثبيت والتشغيل
+
+```bash
+# استنساخ المستودع
+git clone https://github.com/Alteyeb12/CyberSecurityHub.git
+cd CyberSecurityHub
+git checkout dev
+
+# تشغيل مع Docker
+docker-compose up -d
+
+# أو التثبيت اليدوي
+cd src/API
+dotnet restore
+dotnet run
+```
+
+## الدعم التقني
+
+- 📧 البريد الإلكتروني: support@cybersecurityhub.com
+- 🕐 خط المساعدة: متاح 24/7

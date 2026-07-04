@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "الرئيسية";
+}
+
+<div class="jumbotron text-center py-5" style="background: rgba(233, 69, 96, 0.1); border-radius: 15px; border: 2px solid #e94560;">
+    <h1 class="display-4 mb-4" style="color: #e94560;">
+        🔒 مرحباً بك في CyberInsight
+    </h1>
+    <p class="lead mb-4" style="color: #00d4ff;">
+        منصة متطورة لمراقبة ورصد التهديدات السيبرانية في الوقت الفعلي
+    </p>
+    <p class="mb-4">حافظ على أمان بياناتك مع أقوى أدوات المراقبة السيبرانية</p>
+    <div class="gap-2 d-flex justify-content-center">
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <a class="btn btn-lg" asp-controller="Dashboard" asp-action="Index" style="background-color: #e94560; color: white;">
+                اذهب إلى لوحة التحكم
+            </a>
+        }
+        else
+        {
+            <a class="btn btn-lg" asp-controller="Account" asp-action="Register" style="background-color: #e94560; color: white;">
+                ابدأ الآن
+            </a>
+            <a class="btn btn-lg" asp-controller="Account" asp-action="Login" style="background-color: #00d4ff; color: #000;">
+                دخول
+            </a>
+        }
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100" style="text-align: center;">
+            <div class="card-body">
+                <h3 class="card-title" style="color: #00d4ff;">🔍 مراقبة حية</h3>
+                <p class="card-text">رصد التهديدات والأنشطة المشبوهة في الوقت الفعلي بدقة عالية</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100" style="text-align: center;">
+            <div class="card-body">
+                <h3 class="card-title" style="color: #00d4ff;">📊 تحليل متقدم</h3>
+                <p class="card-text">احصل على تحليلات معمقة وإحصائيات شاملة عن التهديدات</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100" style="text-align: center;">
+            <div class="card-body">
+                <h3 class="card-title" style="color: #00d4ff;">🛡️ حماية شاملة</h3>
+                <p class="card-text">حماية فعالة لبياناتك مع أحدث معايير الأمان والتشفير</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <h2 style="color: #e94560;">المميزات الرئيسية</h2>
+        <ul style="line-height: 2;">
+            <li>✅ مراقبة فعلية للتهديدات (Real-time Monitoring)</li>
+            <li>✅ لوحة تحكم تفاعلية وسهلة الاستخدام</li>
+            <li>✅ تنبيهات فورية للتهديدات الحرجة</li>
+            <li>✅ تقارير مفصلة وإحصائيات شاملة</li>
+            <li>✅ نظام أمان متقدم (BCrypt + HTTPS)</li>
+            <li>✅ دعم فني 24/7</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h2 style="color: #e94560;">خطط الاشتراك</h2>
+        <div class="card" style="background: rgba(0, 212, 255, 0.1); border-color: #00d4ff;">
+            <div class="card-body">
+                <h4>💎 اختر خطتك المناسبة</h4>
+                <p><strong>النسخة المجانية:</strong> مراقبة أساسية مع تقارير محدودة</p>
+                <p><strong>النسخة الاحترافية:</strong> مراقبة متقدمة مع تقارير مفصلة ($99/شهر)</p>
+                <p><strong>النسخة المؤسسية:</strong> حل شامل مع دعم مخصص ($299/شهر)</p>
+            </div>
+        </div>
+    </div>
+</div>

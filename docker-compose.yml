@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "YourPassword@123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db,1433;Database=CyberInsightDB;User Id=sa;Password=YourPassword@123;TrustServerCertificate=true;
+      - Stripe__SecretKey=sk_test_your_key
+      - Stripe__PublicKey=pk_test_your_key
+    depends_on:
+      - db
+    volumes:
+      - ./:/app
+
+volumes:
+  sqldata:
+    driver: local

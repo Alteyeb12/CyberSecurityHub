@@ -1,3 +1,4 @@
+using CyberInsight.Models;
 using CyberInsight.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

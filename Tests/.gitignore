@@ -1,0 +1,50 @@
+# MSBuild
+bin/
+obj/
+*.csproj.user
+
+# Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# TestResults
+TestResults/
+*.trx
+
+# NUnit
+nunit-results/
+
+# xUnit
+*.opencover.xml
+
+# Coverage Reports
+coverage/
+*.coverage
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+*.mdf
+*.ldf
+*.ndf
+
+# Logs
+logs/
+*.log
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

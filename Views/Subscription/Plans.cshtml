@@ -1,0 +1,90 @@
+@{
+    ViewData["Title"] = "الاشتراكات";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-5 text-center" style="color: #e94560;">💳 اختر خطتك المفضلة</h1>
+
+    <div class="row g-4">
+        <!-- Free Plan -->
+        <div class="col-md-4">
+            <div class="card h-100" style="border: 3px solid #00d4ff;">
+                <div class="card-body text-center">
+                    <h3 style="color: #00d4ff;">🎁 المجاني</h3>
+                    <h2 style="color: #e94560; margin: 20px 0;">$0<span style="font-size: 0.5em;">/شهر</span></h2>
+                    <ul class="list-unstyled" style="text-align: left; color: #e0e0e0;">
+                        <li class="mb-2">✓ مراقبة أساسية</li>
+                        <li class="mb-2">✓ حتى 10 تهديدات شهرية</li>
+                        <li class="mb-2">✓ تقارير محدودة</li>
+                        <li class="mb-2">✗ دعم أساسي فقط</li>
+                        <li class="mb-2">✗ بدون API متقدم</li>
+                    </ul>
+                    <button class="btn w-100" style="background-color: #00d4ff; color: #000; margin-top: 20px; font-weight: bold;" disabled>
+                        ✓ خطتك الحالية
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Plan -->
+        <div class="col-md-4">
+            <div class="card h-100" style="border: 3px solid #e94560; transform: scale(1.05);">
+                <div class="card-body text-center">
+                    <div style="background: #e94560; color: white; padding: 10px; border-radius: 5px; margin: -20px -20px 20px; text-align: center;">⭐ الموصى به</div>
+                    <h3 style="color: #e94560;">🚀 احترافي</h3>
+                    <h2 style="color: #e94560; margin: 20px 0;">$99<span style="font-size: 0.5em;">/شهر</span></h2>
+                    <ul class="list-unstyled" style="text-align: left; color: #e0e0e0;">
+                        <li class="mb-2">✓ مراقبة متقدمة</li>
+                        <li class="mb-2">✓ تهديدات غير محدودة</li>
+                        <li class="mb-2">✓ تقارير مفصلة يومية</li>
+                        <li class="mb-2">✓ دعم الأولوية</li>
+                        <li class="mb-2">✓ API متقدم</li>
+                    </ul>
+                    <form asp-controller="Subscription" asp-action="Checkout" method="post" style="margin-top: 20px;">
+                        <input type="hidden" name="plan" value="Professional">
+                        <button type="submit" class="btn w-100" style="background-color: #e94560; color: white; font-weight: bold;">
+                            💳 اختر الآن
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="col-md-4">
+            <div class="card h-100" style="border: 3px solid #ffa502;">
+                <div class="card-body text-center">
+                    <h3 style="color: #ffa502;">🏢 مؤسسي</h3>
+                    <h2 style="color: #ffa502; margin: 20px 0;">$299<span style="font-size: 0.5em;">/شهر</span></h2>
+                    <ul class="list-unstyled" style="text-align: left; color: #e0e0e0;">
+                        <li class="mb-2">✓ مراقبة فعلية 24/7</li>
+                        <li class="mb-2">✓ تهديدات غير محدودة</li>
+                        <li class="mb-2">✓ تقارير فورية وتنبيهات</li>
+                        <li class="mb-2">✓ دعم VIP مخصص</li>
+                        <li class="mb-2">✓ API كامل + Webhooks</li>
+                    </ul>
+                    <form asp-controller="Subscription" asp-action="Checkout" method="post" style="margin-top: 20px;">
+                        <input type="hidden" name="plan" value="Enterprise">
+                        <button type="submit" class="btn w-100" style="background-color: #ffa502; color: #000; font-weight: bold;">
+                            💳 اختر الآن
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="alert alert-info" style="background: rgba(0, 212, 255, 0.1); border-color: #00d4ff; color: #e0e0e0;">
+                <h5 style="color: #00d4ff;">ℹ️ معلومات مهمة</h5>
+                <ul>
+                    <li>جميع الخطط تشمل تشفير البيانات والأمان المتقدم</li>
+                    <li>يمكنك تغيير الخطة أو إلغاء الاشتراك في أي وقت</li>
+                    <li>نحتفظ بـ 30 يوماً من سجل التهديدات</li>
+                    <li>للشركات الكبرى، تواصل معنا للعروض المخصصة</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

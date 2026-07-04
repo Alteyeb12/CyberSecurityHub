@@ -1,0 +1,80 @@
+@{
+    ViewData["Title"] = "تسجيل";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" style="border: 2px solid #e94560;">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4" style="color: #e94560;">
+                        📝 إنشاء حساب جديد
+                    </h2>
+
+                    <form asp-action="Register" method="post" asp-antiforgery="true">
+                        <div class="form-group mb-3">
+                            <label for="Email" class="form-label" style="color: #e0e0e0;">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="Email" name="Email" required style="background: #16213e; border-color: #e94560; color: #e0e0e0;">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="FirstName" class="form-label" style="color: #e0e0e0;">الاسم الأول</label>
+                            <input type="text" class="form-control" id="FirstName" name="FirstName" required style="background: #16213e; border-color: #e94560; color: #e0e0e0;">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="LastName" class="form-label" style="color: #e0e0e0;">الاسم الأخير</label>
+                            <input type="text" class="form-control" id="LastName" name="LastName" required style="background: #16213e; border-color: #e94560; color: #e0e0e0;">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="CompanyName" class="form-label" style="color: #e0e0e0;">اسم الشركة</label>
+                            <input type="text" class="form-control" id="CompanyName" name="CompanyName" required style="background: #16213e; border-color: #e94560; color: #e0e0e0;">
+                            <span asp-validation-for="CompanyName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="Password" class="form-label" style="color: #e0e0e0;">كلمة المرور</label>
+                            <input type="password" class="form-control" id="Password" name="Password" required style="background: #16213e; border-color: #e94560; color: #e0e0e0;">
+                            <small class="text-muted" style="color: #a0a0a0;">8 أحرف على الأقل</small>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="ConfirmPassword" class="form-label" style="color: #e0e0e0;">تأكيد كلمة المرور</label>
+                            <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required style="background: #16213e; border-color: #e94560; color: #e0e0e0;">
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        @if (ViewBag.ErrorMessage != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewBag.ErrorMessage
+                            </div>
+                        }
+
+                        <button type="submit" class="btn w-100" style="background-color: #e94560; color: white; font-weight: bold; padding: 10px;">
+                            📝 تسجيل
+                        </button>
+                    </form>
+
+                    <hr style="border-color: #e94560;">
+
+                    <p class="text-center" style="color: #a0a0a0;">
+                        هل لديك حساب بالفعل؟
+                        <a asp-controller="Account" asp-action="Login" style="color: #00d4ff; text-decoration: none;">
+                            دخول
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
